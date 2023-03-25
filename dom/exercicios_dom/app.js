@@ -13,7 +13,7 @@ new Vue({
     },
 
 watch: {
-    resultado(valor)
+    
     valor2(){
         setTimeout(()=>{
             this.valor2=0;
