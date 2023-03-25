@@ -48,7 +48,7 @@
         <!-- 8) Ajuste o exercício 7 para disparar o evento "keydown" somente
             quando a tecla for ENTER -->
         <div>
-            <input type="text">
+            <input type="text" @keydown.enter ="amrValor">
             <p>{{ valor }}</p>
         </div>
     
@@ -56,13 +56,13 @@
             "valor" for diferente de 37 - "valor" é alterado pelos botões.
             Mostrar 'Valor Igual' quando "valor" for igual a 37 -->
             
-        <!-- 10) Monitorar as mudança de "resultado" e reiniciar "valor"
+        <!-- 10) Monitorar as mudança de "resultado" e reiniciar "valor2"
             para 0 depois de 5 segundos (dica: setTimeout(..., 5000) -->            
         <div>
-            <p>Valor atual: {{ valor }}</p>
-            <button @click="valor += 5">Somar 5</button>
-            <button @click="valor += 1">Somar 1</button>
-            <p>{{ resultado }}</p>
+            <p>Valor atual: {{ valor2 }}</p>
+            <button @click="valor2 += 5">Somar 5</button>
+            <button @click="valor2 += 1">Somar 1</button>
+            <p :text="altTexto()">{{ resultado }}</p>
         </div>
         
         <!-- 11) Crie duas classes CSS e associe a div usando a
