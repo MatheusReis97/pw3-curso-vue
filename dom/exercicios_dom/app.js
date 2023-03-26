@@ -48,9 +48,9 @@ new Vue({
             return this.valor2 == 37 ? this.resultado = "Valor igual" : this.resultado = "Valor diferente";
 
         },
-        classe() {
-            if (this.classe1 == true && this.classe2 == true) {
-                return 'Estou com classe CSS:'
+        classe(){
+            if(this.classe1 == true && this.classe2 == true){
+                return 'Estou com classe CSS :D '
             }
         }
     }
