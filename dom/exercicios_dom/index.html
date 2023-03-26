@@ -67,14 +67,14 @@
         
         <!-- 11) Crie duas classes CSS e associe a div usando a
             sintaxe de array -->
-        <div>Estou sem classe CSS :(</div>
-    
-        <!-- 12) Aplique na div abaixo a classe informada pelo usuário
-            (crie classe CSS de exemplo). -->
-        <div>
-            <input type="text">
-            <div></div>
-        </div>
+            <div :class="[ 'box', classe1 ]" :class="[ 'box2', classe2 ]">{{ classe() }}</div>
+
+            <!-- 12) Aplique na div abaixo a classe informada pelo usuário
+                (crie classe CSS de exemplo). -->
+            <div>
+                <input type="text" v-model="corEscolhida">
+                <div class="box3" :style="{backgroundColor: corEscolhida}"></div>
+            </div>
     
     </div>
     <script src="app.js"></script>

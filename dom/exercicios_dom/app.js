@@ -9,43 +9,50 @@ new Vue({
         valor: '',
         valor2: 0,
         resultado: 0,
+        classe1: true,
+        classe2: true,
+        corEscolhida: '',
 
     },
 
-watch: {
-    
-    valor2(){
-        setTimeout(()=>{
-            this.valor2=0;
-        },5000 )   }
+    watch: {
 
-},
+        valor2() {
+            setTimeout(() => {
+                this.valor2 = 0;
+            }, 5000)
+        }
 
-
-methods: {
-    nomeCompleto(){
-        console.log(this);
-        return ` Meu nome é ${this.nome} ${this.sobrenome} e tenho ${this.idade} anos`
     },
 
-    numAleatorio(){
-        return Math.random();
-    },
 
-    buttonAlerta(){
-        window.alert('Tamo junto')
-    },
+    methods: {
+        nomeCompleto() {
+            console.log(this);
+            return ` Meu nome é ${this.nome} ${this.sobrenome} e tenho ${this.idade} anos`
+        },
 
-    amrValor(event){
-        this.valor = event.target.value;
-    },
-    altTexto() {
+        numAleatorio() {
+            return Math.random();
+        },
 
-        return this.valor2 == 37 ? this.resultado = "Valor igual" : this.resultado = "Valor diferente";
-      
+        buttonAlerta() {
+            window.alert('Tamo junto')
+        },
+
+        amrValor(event) {
+            this.valor = event.target.value;
+        },
+        altTexto() {
+
+            return this.valor2 == 37 ? this.resultado = "Valor igual" : this.resultado = "Valor diferente";
+
+        },
+        classe() {
+            if (this.classe1 == true && this.classe2 == true) {
+                return 'Estou com classe CSS:'
+            }
+        }
     }
-
-
-},
-    }
+}
 )
