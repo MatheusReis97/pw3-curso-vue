@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais e Listas</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main id="app"> 
+        <template v-if="logado">
+            <p v-if="logado" > Usuario Logado: {{ nome }}</p>
+            <p>Perfil : Admin</p>
+
+        </template>
+        <p v-else-if="anonimo"> Navegando como anonimo</p>
+        <p v-else> Nenhum  usuario logado</p>
+        <button @click="logado = !logado"> {{ logado ? "Sair" : "Entrar"}}</button>
+        <input  id="anonimo'" type="checkbox" v-model="anonimo">
+        <label for="anonimo"> Navegação Anônima</label>
+        <hr>
+
+
+        <footer v-show="logado">
+            Desenvolvido na força do perdido e ódio p/ o(e) {{ nome }}
+        </footer>
+        <footer v-show="!logado">
+            Desenvolvido na força do perdido e ódio
+        </footer>
+
+
+        <h2>Listas</h2>        
+
+        <ul>
+            <li>
+                <template v-for= "(cor, index) in cores">
+                    <h2> {{cor}}</h2>
+                    <p> {{index+1}} </p>
+                </template>
+                </li>
+            
+        </ul>
+
+
+        <ul>
+
+            
+        </ul>
+       
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
