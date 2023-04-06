@@ -49,11 +49,28 @@
 			notas: [7.67, 8.33, 6.98, 9.21]
 		}
     (dica: use v-for e v-if na resolução) -->
-  <h2>#04</h2>
-  <ul>
-    <li key="index" v-for="">
-
-    </li>
-  </ul>
+    <h2>#04</h2>
+    <!-- <ul>
+      <li v-for="alunos in aluno" :key="aluno.nome">
+        {{aluno.id}} - {{aluno.nome}}
+        </li></ul>
+      
+      <ul>
+          <li v-for="(notas) in aluno.notas">
+            notas: {{notas}}
+          </li>
+      </ul> -->
+  
+      <ul>
+      <li v-for="(valor, key) in aluno" v-if="key !== 'notas'">
+         {{key}}: {{ valor }}
+      </li>
+    </ul>
+      <ul v-if="aluno.notas">
+        <h4>Notas:</h4>
+        <li v-for="nota in aluno.notas">
+            {{ nota }}
+        </li>
+      </ul>
 </div>
 <script src="app.js"></script>
