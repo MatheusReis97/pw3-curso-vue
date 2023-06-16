@@ -19,29 +19,22 @@
             </table>
             <hr>
             <div class="total">
-                <span>Total: <strong>{{ total | dinheiro }}</strong></span>
+                <span>Total: <strong>{{ valorTotal | dinheiro }}</strong></span>
             </div>
         </div>
     </Painel>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
     computed: {
-        total() {
-            return this.produtos.map(p => p.quantidade * p.preco)
-                .reduce((total, atual) => total + atual, 0)
+        ...mapGetters(['valorTotal']),
+        produtos() {
+            return this.$store.state.produtos;
         }
     },
-    data() {
-        return {
-            produtos: [
-                { id: 1, nome: 'Produto 1', quantidade: 7, preco: 14.55 },
-                { id: 2, nome: 'Produto 2', quantidade: 10, preco: 22.99 },
-                { id: 3, nome: 'Produto 3', quantidade: 1, preco: 43.18 },
-            ]
-        }
-    }
 }
 </script>
 
