@@ -1,5 +1,3 @@
 <template>
-  <h1>
-    Meu Vue
-    </h1>
-</template>
+    <h1>meu Vue</h1>
+</template> 
